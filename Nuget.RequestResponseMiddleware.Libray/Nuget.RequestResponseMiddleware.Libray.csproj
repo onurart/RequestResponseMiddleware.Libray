@@ -1,21 +1,41 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-	  <LangVersion>10</LangVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>10</LangVersion>
+		<Authors>Onur Umutluoglu</Authors>
+		<Description>This package is the package that captures and manages Request and Response requests in web API Projects.</Description>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageReadmefile>README.md</PackageReadmefile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageVersion>1.0.1</PackageVersion>
+		<PackageIcon>our.png</PackageIcon>
+		<PackageId>RequestResponseMiddleware.Libray</PackageId>
+		<PackageProjectUrl>https://github.com/onurart</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/onurart/RequestResponseMiddleware.Libray</RepositoryUrl>
+		<PackageTags>RequestResponseMiddleware.</PackageTags>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="license\LICENSE.txt" Pack="true" PackagePath="" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="3.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="LogWriters\" />
-    <Folder Include="MessageCreators\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
-    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="3.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="license\LICENSE.txt">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Update="our.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>

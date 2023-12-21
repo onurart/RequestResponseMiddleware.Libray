@@ -1,0 +1,23 @@
+﻿namespace Nuget.RequestResponseMiddleware.Libray.MessageCreators
+{
+    public abstract class BaseLogMessageCreator
+    {
+     
+        protected string GetValuebyField(RequestResponseContext context,LogFields fields)
+        {
+            return fields switch
+            {
+                LogFields.Request => context.RequestBody,
+                LogFields.Response => context.RequestBody,
+                LogFields.QueryString => context.context.Request?.QueryString.Value,
+                LogFields.Path => context.context?.Request.Path.Value,
+                LogFields.HostName => context.context?.Request.Host.Value,
+                LogFields.RequestLength => context.RequestLength.ToString(),
+                LogFields.ResponseLength => context.ResponseLength.ToString(),
+                LogFields.ResponseTiming => context.FormattedCreationTime,
+                _ => string.Empty,
+
+            };
+        }
+    }
+}

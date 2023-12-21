@@ -3,18 +3,26 @@
     public class LoggingOptions
     {
         private List<LogFields> loggingFields;
-        public LogLevel logLevel { get; set; } = LogLevel.Information;
-        public string LoggerCategoryName { get; set; } = "RequstReponseLoggerMiddleware";
-        public List<LogFields> LogFields
+
+        public LogLevel LogLevel { get; set; } = LogLevel.Information;
+
+        public string LoggerCategoryName { get; set; } = "RequestResponseLoggerMiddleware";
+
+        public List<LogFields> LoggingFields
         {
-            get { return loggingFields ??= new List<LogFields>(); }
+            get 
+            {
+                return loggingFields ??= new List<LogFields>();
+            }
+
             set => loggingFields = value;
         }
     }
+
     public enum LogFields
     {
-        Requst,
-        Reponse,
+        Request,
+        Response,
         HostName,
         Path,
         QueryString,
